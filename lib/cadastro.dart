@@ -41,6 +41,13 @@ class _MyCadastroState extends State<MyCadastro> {
                       labelStyle: TextStyle(
                           color: const Color.fromARGB(255, 54, 54, 54)), //
                     ),
+                     validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Campo obrigatório";
+                        } else {
+                          return null;
+                        }
+                      },
                   ),
                   SizedBox(
                     height: 30,
@@ -53,6 +60,14 @@ class _MyCadastroState extends State<MyCadastro> {
                       labelStyle: TextStyle(
                           color: const Color.fromARGB(255, 54, 54, 54)), //
                     ),
+                            validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Campo obrigatório";
+                        } else {
+                          return null;
+                        }
+                      },
+                    
                   ),
                   SizedBox(
                     height: 30,
@@ -65,6 +80,13 @@ class _MyCadastroState extends State<MyCadastro> {
                       labelStyle: TextStyle(
                           color: const Color.fromARGB(255, 54, 54, 54)), //
                     ),
+                     validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Campo obrigatório";
+                        } else {
+                          return null;
+                        }
+                      },
                   ),
                   SizedBox(
                     height: 30,

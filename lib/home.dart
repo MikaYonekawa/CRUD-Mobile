@@ -15,7 +15,6 @@ class _MyHomeState extends State<MyHome> {
   String busca = "";
   late List<Pet> listBusca;
   @override
-
   void atualizaLista(String nome) {
     listBusca = List.from(list);
     setState(() {
@@ -23,7 +22,7 @@ class _MyHomeState extends State<MyHome> {
           .where((element) =>
               (element.nome.toLowerCase().contains(nome.toLowerCase())))
           .toList();
-    });//fazer validação
+    }); //fazer validação
   }
 
   @override
@@ -50,18 +49,37 @@ class _MyHomeState extends State<MyHome> {
           SizedBox(
             height: 30,
           ),
-          TextField(
-            onChanged: (value) {
-              busca = value;
-              atualizaLista(value);
-            },
-            style: TextStyle(fontSize: 15),
-            decoration: InputDecoration(
-              labelText: 'Nome',
-              border: OutlineInputBorder(),
-              filled: true,
-              fillColor: Color.fromARGB(255, 184, 206, 225),
-              prefixIcon: Icon(Icons.search),
+          ClipOval(
+            child: Container(
+              width: 200,
+              height: 200,
+              child: SizedBox(
+                width: 100,
+                height: 100,
+                child: Image.network(
+                  'https://cdn-icons-png.flaticon.com/512/1566/1566779.png',
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: 300,
+            child: TextField(
+              onChanged: (value) {
+                busca = value;
+                atualizaLista(value);
+              },
+              style: TextStyle(fontSize: 15),
+              decoration: InputDecoration(
+                labelText: 'Nome',
+                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Color.fromARGB(255, 184, 206, 225),
+                prefixIcon: Icon(Icons.search),
+              ),
             ),
           ),
           ListView.separated(
